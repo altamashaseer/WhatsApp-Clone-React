@@ -1,5 +1,15 @@
+:root{
+    --base: #008069;
+    --darkbase: #111b21;
+    --hover:#23292c;
+    --bg:#222e35;
+    --text:#ffffffcb;
+}
+
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
