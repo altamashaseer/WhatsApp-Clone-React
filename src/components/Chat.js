@@ -8,9 +8,9 @@ function Chat() {
       <div className="chatInfo">
         <span>Jane</span>
         <div className="chatIcons">
-          <i class="fa-solid fa-video"></i>
-          <i class="fa-solid fa-phone"></i>
-          <span class="material-symbols-outlined">more_vert</span>
+          <i className="fa-solid fa-video"></i>
+          <i className="fa-solid fa-phone"></i>
+          <span className="material-symbols-outlined">more_vert</span>
         </div>
       </div>
       <Messages/>
