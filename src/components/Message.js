@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Message() {
+function Message({messages}) {
   return (
     <div className='message owner'>
         <div className="messageInfo">
