@@ -1,8 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { AuthContext } from "./AuthContext";
 
-
-
 const ChatContext = createContext();
 const ChatContextProvider = ({ children }) => {
     const { currentUser } = useContext(AuthContext)

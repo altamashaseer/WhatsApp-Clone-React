@@ -1,0 +1,71 @@
+/* BACKGROUND CSS */
+.background {
+    height: 100vh;
+    width: 100%;
+    z-index: -9;
+    position: absolute;
+
+}
+
+.container1 {
+    height: 35%;
+    background-color: #00a884;
+}
+
+.container2 {
+    height: 65%;
+    background-color: #111b21;
+}
+
+/* HOMEBG */
+.homeBG {
+    box-sizing: border-box;
+    background-color: #222e35;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeBG img {
+    height: 15rem;
+    width: fit-content;
+}
+
+.homeBG h1 {
+    font-weight: lighter;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.homeBG span {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8696a0;
+    text-align: center;
+}
+
+.base{
+    position: absolute;
+    bottom: 3rem;
+    font-size: 10px;
+
+}
+.base i{
+    font-size: .7rem;
+    margin-right: 3px;
+}
+.foot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #008069;
+}

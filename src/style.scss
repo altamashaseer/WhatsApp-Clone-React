@@ -1,14 +1,16 @@
-@mixin mobile{
+@mixin mobile {
     @media screen and (max-width: 480px) {
         @content;
     }
 }
-@mixin tablet{
+
+@mixin tablet {
     @media screen and (max-width: 768px) {
         @content;
     }
 }
-@mixin laptop{
+
+@mixin laptop {
     @media screen and (max-width: 1200px) {
         @content;
     }
@@ -16,11 +18,35 @@
 
 
 .formContainer {
-    background-color: black;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    .logo {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: .8rem;
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+
+        img {
+            height: 45px;
+            width: 45px;
+            margin-right: .5rem;
+        }
+
+        span {
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+    }
 
     .formWrapper {
         background-color: white;
@@ -30,31 +56,39 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        border-radius: 10px;
+        border-radius: 7px;
+        width: 25%;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 
         .title {
-            font-size: 15 px;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
         }
 
         form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 30px;
+            width: 100%;
 
             input {
                 padding: 15px;
+                padding-bottom: 8px;
                 border: none;
-                width: 250px;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.575);
+                font-size: 1rem;
 
                 &::placeholder {
                     color: rgb(175, 175, 175);
+                    font-weight: light;
                 }
 
                 &:focus {
                     outline: 0;
+                    border-bottom: 1px solid var(--base);
                 }
-
             }
 
             label {
@@ -62,9 +96,10 @@
                 align-items: center;
                 cursor: pointer;
                 width: fit-content;
+                font-size: .96rem;
 
-                i {
-                    font-size: 25px;
+                span {
+                    font-size: 2rem;
                     margin-right: 5px;
                 }
             }
@@ -73,15 +108,27 @@
                 background-color: var(--base);
                 color: white;
                 padding: 10px;
-                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .2rem;
+                font-size: .95rem;
                 border: none;
                 cursor: pointer;
+
+                &:hover {
+                    background-color: #0cb898;
+                }
             }
 
         }
 
         p {
-            font-size: 13px;
+            font-size: .98rem;
+
+            :link {
+                text-decoration: none;
+            }
         }
     }
 }
@@ -115,7 +162,8 @@
                 .logo {
                     font-size: 1.1rem;
                     color: var(--text);
-                    @include tablet{
+
+                    @include tablet {
                         display: none;
                     }
                 }
@@ -143,52 +191,73 @@
             }
 
             .search {
-                border-bottom: 1px solid rgba(83, 80, 80, 0.527);
-
                 .searchForm {
                     padding: 1rem;
+                    // border: 1px solid white;
 
                     input {
-                        background-color: transparent;
+                        background-color: #202c33;
                         border: none;
                         outline: none;
                         color: var(--text);
+                        width: 90%;
+                        padding: .8rem;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .chats {
+                // border: 1px solid white;
+                overflow-y: scroll;
+
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(136, 136, 136, 0.712);
+                }
+
+
+                height: 78vh;
+
+                .userchat {
+                    padding: 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    // border-bottom: 1px solid rgba(83, 80, 80, 0.527);
+
+                    &:hover {
+                        background-color: var(--hover);
+                    }
+
+                    img {
+                        height: 49px;
+                        width: 49px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .userChatInfo {
+                        padding-bottom: .8rem;
+                        border-bottom: 1px solid rgba(83, 80, 80, 0.356);
                         width: 100%;
+
+                        span {
+                            font-size: 1.1rem;
+                            font-weight: bold;
+                            color: whitesmoke;
+                        }
+
+                        p {
+                            font-size: .8rem;
+                            color: var(--text);
+                        }
                     }
                 }
             }
-
-            .userchat {
-                padding: 1rem;
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-
-                &:hover {
-                    background-color: var(--hover);
-                }
-
-                img {
-                    height: 40px;
-                    width: 40px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
-
-                .userChatInfo {
-                    span {
-                        font-size: 1.1rem;
-                        font-weight: bold;
-                        color: whitesmoke;
-                    }
-
-                    p {
-                        font-size: .8rem;
-                        color: var(--text);
-                    }
-                }
-            }
-
         }
 
         .chat {
@@ -202,6 +271,18 @@
                 height: 2rem;
                 padding: 1rem;
                 border-bottom: 1px solid rgba(83, 80, 80, 0.527);
+
+                .userHead {
+                    display: flex;
+                    align-items: center;
+                }
+
+                img {
+                    height: 40px;
+                    width: 40px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
 
                 span {
                     font-weight: bold;
@@ -222,10 +303,18 @@
             }
 
             .messages {
-                // background-color: black;
+                background: url('../src/media/chatBackground.jpg') center center/cover;
                 padding: 1rem;
                 height: calc(100% - 161px);
                 overflow-y: scroll;
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(136, 136, 136, 0.712);
+                }
 
                 .message {
                     display: flex;
@@ -245,6 +334,10 @@
                             height: 40px;
                             object-fit: cover;
                             border-radius: 50%;
+                        }
+
+                        .msgDate {
+                            margin-top: 3px;
                         }
                     }
 
@@ -268,8 +361,10 @@
 
                     &.owner {
                         flex-direction: row-reverse;
+
                         .messageContent {
                             align-items: flex-end;
+
                             p {
                                 background-color: #005c4b;
                                 color: white;
