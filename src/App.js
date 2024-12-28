@@ -14,13 +14,15 @@ function App() {
     }
     return children  // else navigate to homepage
   }
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
           <ProtectedRoute>
             <Home />
-          </ProtectedRoute>} />
+          </ProtectedRoute>
+        } />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="*" element={'Error 404'} />

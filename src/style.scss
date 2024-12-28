@@ -208,7 +208,6 @@
             }
 
             .chats {
-                // border: 1px solid white;
                 overflow-y: scroll;
 
                 &::-webkit-scrollbar {
@@ -219,46 +218,47 @@
                     background: rgba(136, 136, 136, 0.712);
                 }
 
-
                 height: 78vh;
+            }
 
-                .userchat {
-                    padding: 1rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-                    // border-bottom: 1px solid rgba(83, 80, 80, 0.527);
+            .userchat {
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                // border-bottom: 1px solid rgba(83, 80, 80, 0.527);
 
-                    &:hover {
-                        background-color: var(--hover);
+                &:hover {
+                    background-color: var(--hover);
+                }
+
+                img {
+                    height: 49px;
+                    width: 49px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .userChatInfo {
+                    padding-bottom: .8rem;
+                    border-bottom: 1px solid rgba(83, 80, 80, 0.356);
+                    width: 100%;
+
+                    span {
+                        font-size: 1.1rem;
+                        font-weight: bold;
+                        color: whitesmoke;
                     }
 
-                    img {
-                        height: 49px;
-                        width: 49px;
-                        border-radius: 50%;
-                        object-fit: cover;
-                    }
-
-                    .userChatInfo {
-                        padding-bottom: .8rem;
-                        border-bottom: 1px solid rgba(83, 80, 80, 0.356);
-                        width: 100%;
-
-                        span {
-                            font-size: 1.1rem;
-                            font-weight: bold;
-                            color: whitesmoke;
-                        }
-
-                        p {
-                            font-size: .8rem;
-                            color: var(--text);
-                        }
+                    p {
+                        font-size: .8rem;
+                        color: var(--text);
                     }
                 }
             }
         }
+
+        // }
 
         .chat {
             flex: 2.5;
